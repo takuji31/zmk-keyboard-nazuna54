@@ -1,0 +1,12 @@
+
+if SHIELD_NAZUNA54_LEFT
+config ZMK_KEYBOARD_NAME
+    default "nazuna54"
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+endif
+
+if SHIELD_NAZUNA54_LEFT || SHIELD_NAZUNA54_RIGHT
+config ZMK_SPLIT
+    default y
+endif
