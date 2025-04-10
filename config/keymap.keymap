@@ -131,10 +131,10 @@
         base-w {
             display-name = "Base Windows";
             bindings = <
-&kp ESC    &kp Q     &kp W      &kp F     &kp P     &kp B        &kp LS(LC(TAB))  &kp LS(LA(TAB))  &kp J      &kp L     &kp U      &kp Y    &kp SQT    &kp EQL
-&kp TAB    &kp A     &kp R      &kp S     &kp T     &kp G        &kp LC(TAB)      &kp LA(TAB)      &kp M      &kp N     &kp E      &kp I    &kp O      &kp MINUS
-&kp LSHFT  &kp Z     &kp X      &kp C     &kp D     &kp V                                          &kp K      &kp H     &kp COMMA  &kp DOT  &kp SLASH  &kp SEMI
-&none      &kp CAPS  &kp LCTRL  &kp LALT  &kp LGUI  &lt 3 SPACE  &kp LANG2        &kp LANG1        &lt 5 RET  &kp BSPC  &none      &none    &none      &none
+&kp ESC    &kp Q     &kp W      &kp F     &kp P     &kp B            &kp LS(LC(TAB))  &msc SCRL_UP    &kp J    &kp L     &kp U      &kp Y    &kp SQT    &kp EQL
+&kp TAB    &kp A     &kp R      &kp S     &kp T     &kp G            &kp LC(TAB)      &msc SCRL_DOWN  &kp M    &kp N     &kp E      &kp I    &kp O      &kp MINUS
+&kp LSHFT  &kp Z     &kp X      &kp C     &kp D     &kp V                                             &kp K    &kp H     &kp COMMA  &kp DOT  &kp SLASH  &kp SEMI
+&none      &kp CAPS  &kp LCTRL  &kp LWIN  &kp LALT  &mt LCTRL SPACE  &lt 3 LANG2      &lt 5 LANG1     &kp RET  &kp BSPC  &kp DEL    &none    &none      &none
             >;
 
             label = "Base Windows";
