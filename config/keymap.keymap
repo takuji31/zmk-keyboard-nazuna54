@@ -132,7 +132,7 @@
 &kp ESC    &kp Q     &kp W      &kp F     &kp P     &kp B        &kp LS(LC(TAB))  &kp LS(LA(TAB))  &kp J      &kp L     &kp U      &kp Y    &kp SQT    &kp EQL
 &kp TAB    &kp A     &kp R      &kp S     &kp T     &kp G        &kp LC(TAB)      &kp LA(TAB)      &kp M      &kp N     &kp E      &kp I    &kp O      &kp MINUS
 &kp LSHFT  &kp Z     &kp X      &kp C     &kp D     &kp V                                          &kp K      &kp H     &kp COMMA  &kp DOT  &kp SLASH  &kp SEMI
-&none      &kp CAPS  &kp LCTRL  &kp LALT  &kp LGUI  &lt 3 SPACE  &kp LANG1        &kp LANG2        &lt 5 RET  &kp BSPC  &none      &none    &none      &none
+&none      &kp CAPS  &kp LCTRL  &kp LALT  &kp LGUI  &lt 3 SPACE  &kp LANG2        &kp LANG1        &lt 5 RET  &kp BSPC  &none      &none    &none      &none
             >;
         };
 
