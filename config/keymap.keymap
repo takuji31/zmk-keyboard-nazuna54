@@ -2,43 +2,176 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
+
+#define MBASE 0
+#define WBASE 1
+#define MLOWER 2
+#define MRAISE 3
+#define MADJUST 4
+#define WLOWER 5
+#define WRAISE 6
+#define WADJUST 7
+#define LAYER_8 8
+#define LAYER_9 9
+#define DEVICE 16
+
+&mt {
+    tapping-term-ms = <180>;
+};
+&lt {
+    tapping-term-ms = <180>;
+};
+
 / {
+    behaviors {
+        hml: home_row_mod_left {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            require-prior-idle-ms = <150>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <
+                 7  8  9 10 11 12 13
+                21 22 23 24 25 26 27
+                   34 35 36 37 38 39
+                47 48 49 50 51 52 53
+            >;
+            hold-trigger-on-release;
+        };
+        hmr: home_row_mod_right {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            require-prior-idle-ms = <150>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <
+                 0  1  2  3  4  5  6
+                14 15 16 17 18 19 20
+                28 29 30 31 32 33
+                40 41 42 43 44 45 46
+            >;
+            hold-trigger-on-release;
+        };
+    };
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        tri_layer_mac {
+            if-layers = <2 3>;
+            then-layer = <4>;
+        };
+        tri_layer_win {
+            if-layers = <5 6>;
+            then-layer = <7>;
+        };
+    };
     keymap {
         compatible = "zmk,keymap";
 
         layer_0 {
+            display-name = "Base Mac";
             bindings =<
-                &none &none &none &none &none &none &none &none &none &none &none &none &none &none
-				&none &none &none &none &none &none &none &none &none &none &none &none &none &none
-				&none &none &none &none &none &none &none &none &none &none &none &none
-				&none &none &none &none &none &none &none &none &none &none &none &none &none &none
+                &kp ESC   &kp Q &kp W &kp F &kp P &kp B       &none       &none     &kp J     &kp L    &kp U     &kp Y   &kp SQT   &kp EQL
+                &kp TAB   &kp A &kp R &kp S &kp T &kp G       &none       &none     &kp M     &kp N    &kp E     &kp I   &kp O     &kp MINUS
+                &kp LSHFT &kp Z &kp X &kp C &kp D &kp V                             &kp K     &kp H    &kp COMMA &kp DOT &kp SLASH &kp SEMI
+                &none     &kp Q &kp W &kp F &kp P &lt MLOWER SPACE &kp LANG1   &kp LANG2 &lt MRAISE RET &kp BSPC &kp U   &kp Y   &kp SQT   &kp EQL
             >;
         };
 
         layer_1 {
+            display-name = "Base Windows";
             bindings =<
-                &none &none &none &none &none &none &none &none &none &none &none &none &none &none
-				&none &none &none &none &none &none &none &none &none &none &none &none &none &none
-				&none &none &none &none &none &none &none &none &none &none &none &none
-				&none &none &none &none &none &none &none &none &none &none &none &none &none &none
+                &kp ESC   &kp Q &kp W &kp F &kp P &kp B       &none       &none     &kp J     &kp L    &kp U     &kp Y   &kp SQT   &kp EQL
+                &kp TAB   &kp A &kp R &kp S &kp T &kp G       &none       &none     &kp M     &kp N    &kp E     &kp I   &kp O     &kp MINUS
+                &kp LSHFT &kp Z &kp X &kp C &kp D &kp V                             &kp K     &kp H    &kp COMMA &kp DOT &kp SLASH &kp SEMI
+                &none     &kp Q &kp W &kp F &kp P &lt WLOWER SPACE &kp LANG1   &kp LANG2 &lt WRAISE RET &kp BSPC &kp U   &kp Y   &kp SQT   &kp EQL
             >;
         };
 
         layer_2 {
+            display-name = "Lower Mac";
             bindings =<
-                &none &none &none &none &none &none &none &none &none &none &none &none &none &none
-				&none &none &none &none &none &none &none &none &none &none &none &none &none &none
-				&none &none &none &none &none &none &none &none &none &none &none &none
-				&none &none &none &none &none &none &none &none &none &none &none &none &none &none
+                &trans &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans
+				&trans &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans
+				&trans &trans &trans &trans &trans &trans                 &trans &trans &trans &trans &trans &trans
+				&trans &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans
             >;
         };
 
         layer_3 {
+            display-name = "Raise Mac";
             bindings =<
-                &none &none &none &none &none &none &none &none &none &none &none &none &none &none
-				&none &none &none &none &none &none &none &none &none &none &none &none &none &none
-				&none &none &none &none &none &none &none &none &none &none &none &none
-				&none &none &none &none &none &none &none &none &none &none &none &none &none &none
+                &trans &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans
+				&trans &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans
+				&trans &trans &trans &trans &trans &trans                 &trans &trans &trans &trans &trans &trans
+				&trans &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans
+            >;
+        };
+
+        layer_4 {
+            display-name = "Adjust Mac";
+            bindings =<
+                &trans &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans
+				&trans &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans
+				&trans &trans &trans &trans &trans &trans                 &trans &trans &trans &trans &trans &trans
+				&trans &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans
+            >;
+        };
+        layer_5 {
+            display-name = "Lower Windows";
+            bindings =<
+                &trans &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans
+				&trans &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans
+				&trans &trans &trans &trans &trans &trans                 &trans &trans &trans &trans &trans &trans
+				&trans &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans
+            >;
+        };
+        layer_6 {
+            display-name = "Raise Windows";
+            bindings =<
+                &trans &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans
+				&trans &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans
+				&trans &trans &trans &trans &trans &trans                 &trans &trans &trans &trans &trans &trans
+				&trans &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans
+            >;
+        };
+        layer_7 {
+            display-name = "Adjust Windows";
+            bindings =<
+                &trans &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans
+				&trans &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans
+				&trans &trans &trans &trans &trans &trans                 &trans &trans &trans &trans &trans &trans
+				&trans &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans
+            >;
+        };
+        layer_8 {
+            display-name = "Layer 3";
+            bindings =<
+                &trans &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans
+				&trans &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans
+				&trans &trans &trans &trans &trans &trans                 &trans &trans &trans &trans &trans &trans
+				&trans &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans
+            >;
+        };
+        layer_9 {
+            display-name = "Layer 3";
+            bindings =<
+                &trans &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans
+				&trans &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans
+				&trans &trans &trans &trans &trans &trans                 &trans &trans &trans &trans &trans &trans
+				&trans &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans
+            >;
+        };
+        layer_10 {
+            display-name = "Device";
+            bindings =<
+                &trans &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans
+				&trans &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans
+				&trans &trans &trans &trans &trans &trans                 &trans &trans &trans &trans &trans &trans
+				&trans &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans
             >;
         };
     };
