@@ -8,14 +8,13 @@
 #define MBASE 0
 #define WBASE 1
 #define MLOWER 2
-#define MRAISE 3
-#define MADJUST 4
-#define WLOWER 5
-#define WRAISE 6
+#define WLOWER 3
+#define MRAISE 4
+#define WRAISE 5
+#define MADJUST 6
 #define WADJUST 7
-#define LAYER_8 8
-#define LAYER_9 9
-#define DEVICE 16
+#define DEVICE 8
+#define MODE 10
 
 &mt {
     tapping-term-ms = <180>;
@@ -57,6 +56,25 @@ ZMK_HOLD_TAP(hmr,
 ZMK_CONDITIONAL_LAYER(tri_layer_mac, MLOWER MRAISE, MADJUST)
 ZMK_CONDITIONAL_LAYER(tri_layer_win, WLOWER WRAISE, WADJUST)
 
+ZMK_TAP_DANCE(pst_mac,
+    tapping-term-ms = <180>;
+    bindings = <&kp LG(V)>, <&kp LS(LG(V))>;
+)
+
+ZMK_TAP_DANCE(pst_win,
+    tapping-term-ms = <180>;
+    bindings = <&kp LC(V)>, <&kp LS(LC(V))>;
+)
+
+ZMK_TAP_DANCE(undo_mac,
+    tapping-term-ms = <180>;
+    bindings = <&kp LC(V)>, <&kp LS(LC(V))>;
+)
+ZMK_TAP_DANCE(undo_win,
+    tapping-term-ms = <180>;
+    bindings = <&kp LC(V)>, <&kp LS(LC(V))>;
+)
+
 / {
     keymap {
         compatible = "zmk,keymap";
@@ -64,54 +82,54 @@ ZMK_CONDITIONAL_LAYER(tri_layer_win, WLOWER WRAISE, WADJUST)
         layer_0 {
             display-name = "Base Mac";
             bindings =<
-                &kp ESC   &kp Q &kp W &kp F &kp P &kp B       &none       &none     &kp J     &kp L    &kp U     &kp Y   &kp SQT   &kp EQL
-                &kp TAB   &kp A &kp R &kp S &kp T &kp G       &none       &none     &kp M     &kp N    &kp E     &kp I   &kp O     &kp MINUS
-                &kp LSHFT &kp Z &kp X &kp C &kp D &kp V                             &kp K     &kp H    &kp COMMA &kp DOT &kp SLASH &kp SEMI
-                &none     &kp Q &kp W &kp F &kp P &lt MLOWER SPACE &kp LANG1   &kp LANG2 &lt MRAISE RET &kp BSPC &kp U   &kp Y   &kp SQT   &kp EQL
+                &kp ESC   &kp Q    &kp W     &kp F     &kp P    &kp B            &kp LS(LC(TAB))       &none            &kp J   &kp L    &kp U     &kp Y   &kp SQT   &kp EQL
+                &kp TAB   &kp A    &kp R     &kp S     &kp T    &kp G            &kp LC(TAB)           &none            &kp M   &kp N    &kp E     &kp I   &kp O     &kp MINUS
+                &kp LSHFT &kp Z    &kp X     &kp C     &kp D    &kp V                                                   &kp K   &kp H    &kp COMMA &kp DOT &kp SLASH &kp SEMI
+                &mo MODE     &none    &none     &kp LCTRL &kp LALT &mt LGUI SPACE &lt MLOWER LANG1        &lt MRAISE LANG2 &kp RET &kp BSPC &none     &none   &none     &none
             >;
         };
 
         layer_1 {
             display-name = "Base Windows";
             bindings =<
-                &kp ESC   &kp Q &kp W &kp F &kp P &kp B       &none       &none     &kp J     &kp L    &kp U     &kp Y   &kp SQT   &kp EQL
-                &kp TAB   &kp A &kp R &kp S &kp T &kp G       &none       &none     &kp M     &kp N    &kp E     &kp I   &kp O     &kp MINUS
-                &kp LSHFT &kp Z &kp X &kp C &kp D &kp V                             &kp K     &kp H    &kp COMMA &kp DOT &kp SLASH &kp SEMI
-                &none     &kp Q &kp W &kp F &kp P &lt WLOWER SPACE &kp LANG1   &kp LANG2 &lt WRAISE RET &kp BSPC &kp U   &kp Y   &kp SQT   &kp EQL
+                &kp ESC   &kp Q    &kp W     &kp F    &kp P    &kp B            &kp LS(LC(TAB))       &none     &kp J          &kp L    &kp U     &kp Y   &kp SQT   &kp EQL
+                &kp TAB   &kp A    &kp R     &kp S    &kp T    &kp G            &kp LC(TAB)           &none     &kp M          &kp N    &kp E     &kp I   &kp O     &kp MINUS
+                &kp LSHFT &kp Z    &kp X     &kp C    &kp D    &kp V                                            &kp K          &kp H    &kp COMMA &kp DOT &kp SLASH &kp SEMI
+                &none     &kp CAPS &kp LCTRL &kp LALT &kp LGUI &lt WLOWER SPACE &kp LANG1             &kp LANG2 &lt WRAISE RET &kp BSPC &none     &none   &none     &none
             >;
         };
 
         layer_2 {
             display-name = "Lower Mac";
             bindings =<
-                &kp GRAVE &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &trans   &trans &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &trans 
-				&trans   &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans
-				&trans   &trans &trans &trans &trans &trans                 &trans &trans &trans &trans &trans &trans
-				&trans   &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans
+                &kp GRAVE &kp N1    &kp N2    &kp N3    &kp N4     &kp N5 &trans   &trans &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp BSLH
+				&trans    &kp LCTRL &kp LALT  &kp LCMD  &kp LSHIFT &trans &trans   &trans &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
+				&trans    &undo_mac &kp LG(X) &kp LG(C) &pst_mac   &trans                 &kp HOME &kp PG_DN &kp PG_UP &kp END &trans &trans
+				&trans    &trans    &trans    &trans    &trans     &trans &trans   &trans &trans &trans &trans &trans &trans &trans
+            >;
+        };
+        layer_3 {
+            display-name = "Lower Windows";
+            bindings =<
+                &kp GRAVE &kp N1    &kp N2    &kp N3    &kp N4     &kp N5 &trans   &trans &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp BSLH
+				&trans    &kp LCTRL &kp LALT  &kp LCMD  &kp LSHIFT &trans &trans   &trans &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
+				&trans    &undo_win &kp LC(X) &kp LC(C) &pst_win   &trans                 &kp HOME &kp PG_DN &kp PG_UP &kp END &trans &trans
+				&trans    &trans    &trans    &trans    &trans     &trans &trans   &trans &trans &trans &trans &trans &trans &trans
             >;
         };
 
-        layer_3 {
+        layer_4 {
             display-name = "Raise Mac";
             bindings =<
-                &kp TILDE &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT &trans   &trans &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &trans 
+                &kp TILDE &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT &trans   &trans &kp CARET &kp AMPS &kp STAR &kp LPAR &kp RPAR &kp PIPE 
 				&trans    &trans   &trans &trans   &trans   &trans    &trans   &trans &trans &trans &trans &trans &trans &trans
 				&trans    &trans   &trans &trans   &trans   &trans                    &trans &trans &trans &trans &trans &trans
 				&trans    &trans   &trans &trans   &trans   &trans    &trans   &trans &trans &trans &trans &trans &trans &trans
             >;
         };
 
-        layer_4 {
-            display-name = "Adjust Mac";
-            bindings =<
-                &trans &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans
-				&trans &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans
-				&trans &trans &trans &trans &trans &trans                 &trans &trans &trans &trans &trans &trans
-				&trans &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans
-            >;
-        };
         layer_5 {
-            display-name = "Lower Windows";
+            display-name = "Raise Windows";
             bindings =<
                 &trans &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans
 				&trans &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans
@@ -120,7 +138,7 @@ ZMK_CONDITIONAL_LAYER(tri_layer_win, WLOWER WRAISE, WADJUST)
             >;
         };
         layer_6 {
-            display-name = "Raise Windows";
+            display-name = "Adjust Mac";
             bindings =<
                 &trans &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans
 				&trans &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans
@@ -138,16 +156,16 @@ ZMK_CONDITIONAL_LAYER(tri_layer_win, WLOWER WRAISE, WADJUST)
             >;
         };
         layer_8 {
-            display-name = "Layer 3";
+            display-name = "Device";
             bindings =<
-                &trans &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans
+                &trans &kp C_BRI_DN &kp C_BRI_UP &trans &trans &trans &trans   &trans &kp C_PREV &kp C_PP &kp C_NEXT &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP
 				&trans &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans
 				&trans &trans &trans &trans &trans &trans                 &trans &trans &trans &trans &trans &trans
 				&trans &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans
             >;
         };
         layer_9 {
-            display-name = "Layer 3";
+            display-name = "Device";
             bindings =<
                 &trans &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans
 				&trans &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans
@@ -156,12 +174,12 @@ ZMK_CONDITIONAL_LAYER(tri_layer_win, WLOWER WRAISE, WADJUST)
             >;
         };
         layer_10 {
-            display-name = "Device";
+            display-name = "MODE";
             bindings =<
                 &trans &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans
 				&trans &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans
 				&trans &trans &trans &trans &trans &trans                 &trans &trans &trans &trans &trans &trans
-				&trans &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans
+				&trans &trans &trans &to WBASE &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans
             >;
         };
     };
