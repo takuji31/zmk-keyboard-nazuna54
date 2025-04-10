@@ -103,12 +103,12 @@
         compatible = "zmk,conditional-layers";
 
         tri_layer_mac {
-            if-layers = <2 4>;
+            if-layers = <3 4>;
             then-layer = <6>;
         };
 
         tri_layer_win {
-            if-layers = <3 5>;
+            if-layers = <4 5>;
             then-layer = <7>;
         };
     };
@@ -119,10 +119,10 @@
         base-m {
             display-name = "Base Mac";
             bindings = <
-&kp ESC    &kp Q      &kp W     &kp F  &kp P        &kp B           &kp LS(LC(TAB))  &kp LS(LG(TAB))  &kp J    &kp L     &kp U      &kp Y    &kp SQT    &kp EQUAL
-&kp TAB    &kp A      &kp R     &kp S  &kp T        &kp G           &kp LC(TAB)      &kp LG(TAB)      &kp M    &kp N     &kp E      &kp I    &kp O      &kp MINUS
-&kp LSHFT  &kp Z      &kp X     &kp C  &kp D        &kp V                                             &kp K    &kp H     &kp COMMA  &kp DOT  &kp SLASH  &kp SEMI
-&mo 15     &kp LCTRL  &kp LALT  &none  &tasksw_mac  &mt LGUI SPACE  &lt 2 LANG2      &lt 4 LANG1      &kp RET  &kp BSPC  &none      &none    &none      &none
+&kp ESC    &kp Q      &kp W     &kp F  &kp P        &kp B           &kp LS(LC(TAB))  &kp PG_UP    &kp J    &kp L     &kp U      &kp Y    &kp SQT    &kp EQUAL
+&kp TAB    &kp A      &kp R     &kp S  &kp T        &kp G           &kp LC(TAB)      &kp PG_DN    &kp M    &kp N     &kp E      &kp I    &kp O      &kp MINUS
+&kp LSHFT  &kp Z      &kp X     &kp C  &kp D        &kp V                                         &kp K    &kp H     &kp COMMA  &kp DOT  &kp SLASH  &kp SEMI
+&mo 15     &kp LCTRL  &kp LALT  &none  &tasksw_mac  &mt LGUI SPACE  &lt 3 LANG2      &lt 4 LANG1  &kp RET  &kp BSPC  &kp DEL    &none    &none      &none
             >;
 
             label = "Base Mac";
@@ -131,10 +131,10 @@
         base-w {
             display-name = "Base Windows";
             bindings = <
-&kp ESC    &kp Q     &kp W      &kp F     &kp P     &kp B            &kp LS(LC(TAB))  &msc SCRL_UP    &kp J    &kp L     &kp U      &kp Y    &kp SQT    &kp EQUAL
-&kp TAB    &kp A     &kp R      &kp S     &kp T     &kp G            &kp LC(TAB)      &msc SCRL_DOWN  &kp M    &kp N     &kp E      &kp I    &kp O      &kp MINUS
-&kp LSHFT  &kp Z     &kp X      &kp C     &kp D     &kp V                                             &kp K    &kp H     &kp COMMA  &kp DOT  &kp SLASH  &kp SEMI
-&none      &kp CAPS  &kp LCTRL  &kp LWIN  &kp LALT  &mt LCTRL SPACE  &lt 3 LANG2      &lt 5 LANG1     &kp RET  &kp BSPC  &kp DEL    &none    &none      &none
+&kp ESC    &kp Q     &kp W      &kp F     &kp P     &kp B            &kp LS(LC(TAB))  &kp PG_UP    &kp J    &kp L     &kp U      &kp Y    &kp SQT    &kp EQUAL
+&kp TAB    &kp A     &kp R      &kp S     &kp T     &kp G            &kp LC(TAB)      &kp PG_DN    &kp M    &kp N     &kp E      &kp I    &kp O      &kp MINUS
+&kp LSHFT  &kp Z     &kp X      &kp C     &kp D     &kp V                                          &kp K    &kp H     &kp COMMA  &kp DOT  &kp SLASH  &kp SEMI
+&trans     &kp CAPS  &kp LCTRL  &kp LWIN  &kp LALT  &mt LCTRL SPACE  &lt 4 LANG2      &lt 5 LANG1  &kp RET  &kp BSPC  &kp DEL    &none    &none      &none
             >;
 
             label = "Base Windows";
@@ -223,13 +223,15 @@
             label = "Navigation";
         };
 
-        layer_11 {
+        novel {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&tog 9  &kp F1  &kp F2  &kp F3  &kp F4     &kp F5     &trans  &trans   &kp F6     &kp F7     &kp F8     &kp F9     &kp F10  &kp F11
+&trans  &trans  &trans  &trans  &trans     &trans     &trans  &trans   &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT  &trans   &kp F12
+&trans  &trans  &trans  &trans  &trans     &trans                      &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    &trans   &trans
+&trans  &trans  &trans  &trans  &kp LCTRL  &kp SPACE  &trans  &kp ESC  &kp ENTER  &kp BSPC   &trans     &trans     &trans   &trans
             >;
+
+            label = "Novel Game";
         };
 
         layer_12 {
@@ -281,10 +283,10 @@
         mode {
             display-name = "MODE";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &tog 1  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&none   &none  &tog 1      &none  &none   &none  &none  &none  &none   &none   &none  &none  &none  &bootloader
+&none   &none  &sys_reset  &none  &tog 9  &none  &none  &none  &tog 9  &tog 8  &none  &none  &none  &none
+&none   &none  &none       &none  &none   &none                &none   &none   &none  &none  &none  &none
+&trans  &none  &none       &none  &none   &none  &none  &none  &none   &none   &none  &none  &none  &none
             >;
         };
     };
