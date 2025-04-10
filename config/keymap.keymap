@@ -28,59 +28,77 @@
     tapping-term-ms = <180>;
 };
 
-ZMK_HOLD_TAP(hml,
-    flavor = "balanced";
-    tapping-term-ms = <280>;
-    require-prior-idle-ms = <150>;
-    quick-tap-ms = <175>;
-    hold-trigger-key-positions = <
-         7  8  9 10 11 12 13
-        21 22 23 24 25 26 27
-           34 35 36 37 38 39
-        47 48 49 50 51 52 53
-    >;
-    hold-trigger-on-release;
-    bindings = <&kp>, <&kp>;
-)
-
-ZMK_HOLD_TAP(hmr,
-    flavor = "balanced";
-    tapping-term-ms = <280>;
-    require-prior-idle-ms = <150>;
-    quick-tap-ms = <175>;
-    hold-trigger-key-positions = <
-         0  1  2  3  4  5  6
-        14 15 16 17 18 19 20
-        28 29 30 31 32 33
-        40 41 42 43 44 45 46
-    >;
-    hold-trigger-on-release;
-    bindings = <&kp>, <&kp>;
-)
-
-ZMK_CONDITIONAL_LAYER(tri_layer_mac, MLOWER MRAISE, MADJUST)
-ZMK_CONDITIONAL_LAYER(tri_layer_win, WLOWER WRAISE, WADJUST)
-
-ZMK_TAP_DANCE(pst_mac,
-    tapping-term-ms = <180>;
-    bindings = <&kp LG(V)>, <&kp LS(LG(V))>;
-)
-
-ZMK_TAP_DANCE(pst_win,
-    tapping-term-ms = <180>;
-    bindings = <&kp LC(V)>, <&kp LS(LC(V))>;
-)
-
-ZMK_TAP_DANCE(undo_mac,
-    tapping-term-ms = <180>;
-    bindings = <&kp LC(Z)>, <&kp LS(LC(Z))>;
-)
-ZMK_TAP_DANCE(undo_win,
-    tapping-term-ms = <180>;
-    bindings = <&kp LC(Z)>, <&kp LS(LC(Z))>;
-)
 
 / {
+    behaviors {
+        hml: home_row_mod_left {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <280>;
+            require-prior-idle-ms = <150>;
+            quick-tap-ms = <175>;
+            hold-trigger-key-positions = <
+                7  8  9 10 11 12 13
+                21 22 23 24 25 26 27
+                34 35 36 37 38 39
+                47 48 49 50 51 52 53
+            >;
+            hold-trigger-on-release;
+            bindings = <&kp>, <&kp>;
+        };
+        hmr: home_row_mod_right {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <280>;
+            require-prior-idle-ms = <150>;
+            quick-tap-ms = <175>;
+            hold-trigger-key-positions = <
+                0  1  2  3  4  5  6
+                14 15 16 17 18 19 20
+                28 29 30 31 32 33
+                40 41 42 43 44 45 46
+            >;
+            hold-trigger-on-release;
+            bindings = <&kp>, <&kp>;
+        };
+        pst_mac: paste_mac {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <180>;
+            bindings = <&kp LG(V)>, <&kp LS(LG(V))>;
+        };
+        pst_win: paste_win {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <180>;
+            bindings = <&kp LC(V)>, <&kp LS(LC(V))>;
+        };
+        undo_mac: undo_mac {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <180>;
+            bindings = <&kp LG(Z)>, <&kp LS(LG(Z))>;
+        };
+        undo_win: undo_win {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <180>;
+            bindings = <&kp LC(Z)>, <&kp LS(LC(Z))>;
+        };
+    };
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        tri_layer_mac {
+            if-layers = <MLOWER MRAISE>;
+            then-layer = <MADJUST>;
+        };
+        tri_layer_win {
+            if-layers = <WLOWER WRAISE>;
+            then-layer = <WADJUST>;
+        };
+    };
     keymap {
         compatible = "zmk,keymap";
 
