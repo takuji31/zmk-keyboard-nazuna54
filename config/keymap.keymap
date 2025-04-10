@@ -122,7 +122,7 @@
 &kp ESC    &kp Q      &kp W     &kp F  &kp P        &kp B           &kp LS(LC(TAB))  &kp LS(LG(TAB))  &kp J    &kp L     &kp U      &kp Y    &kp SQT    &kp EQL
 &kp TAB    &kp A      &kp R     &kp S  &kp T        &kp G           &kp LC(TAB)      &kp LG(TAB)      &kp M    &kp N     &kp E      &kp I    &kp O      &kp MINUS
 &kp LSHFT  &kp Z      &kp X     &kp C  &kp D        &kp V                                             &kp K    &kp H     &kp COMMA  &kp DOT  &kp SLASH  &kp SEMI
-&mo 10     &kp LCTRL  &kp LALT  &none  &tasksw_mac  &mt LGUI SPACE  &lt 2 LANG1      &lt 4 LANG2      &kp RET  &kp BSPC  &none      &none    &none      &none
+&mo 10     &kp LCTRL  &kp LALT  &none  &tasksw_mac  &mt LGUI SPACE  &lt 2 LANG2      &lt 4 LANG1      &kp RET  &kp BSPC  &none      &none    &none      &none
             >;
         };
 
