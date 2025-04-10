@@ -88,6 +88,15 @@
             tapping-term-ms = <180>;
             bindings = <&kp LC(Z)>, <&kp LS(LC(Z))>;
         };
+
+        tasksw_mac: tasksw_mac {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TASKSW_MAC";
+            #binding-cells = <0>;
+            bindings = <&lt 14 LA(SPACE)>, <&kp LA(LS(SPACE))>;
+
+            tapping-term-ms = <180>;
+        };
     };
 
     conditional_layers {
@@ -110,10 +119,10 @@
         layer_0 {
             display-name = "Base Mac";
             bindings = <
-&kp ESC    &kp Q  &kp W  &kp F      &kp P     &kp B           &kp LS(LC(TAB))  &kp LS(LG(TAB))  &kp J    &kp L     &kp U      &kp Y    &kp SQT    &kp EQL
-&kp TAB    &kp A  &kp R  &kp S      &kp T     &kp G           &kp LC(TAB)      &kp LG(TAB)      &kp M    &kp N     &kp E      &kp I    &kp O      &kp MINUS
-&kp LSHFT  &kp Z  &kp X  &kp C      &kp D     &kp V                                             &kp K    &kp H     &kp COMMA  &kp DOT  &kp SLASH  &kp SEMI
-&mo 10     &none  &none  &kp LCTRL  &kp LALT  &mt LGUI SPACE  &lt 2 LANG1      &lt 4 LANG2      &kp RET  &kp BSPC  &none      &none    &none      &none
+&kp ESC    &kp Q      &kp W     &kp F  &kp P        &kp B           &kp LS(LC(TAB))  &kp LS(LG(TAB))  &kp J    &kp L     &kp U      &kp Y    &kp SQT    &kp EQL
+&kp TAB    &kp A      &kp R     &kp S  &kp T        &kp G           &kp LC(TAB)      &kp LG(TAB)      &kp M    &kp N     &kp E      &kp I    &kp O      &kp MINUS
+&kp LSHFT  &kp Z      &kp X     &kp C  &kp D        &kp V                                             &kp K    &kp H     &kp COMMA  &kp DOT  &kp SLASH  &kp SEMI
+&mo 10     &kp LCTRL  &kp LALT  &none  &tasksw_mac  &mt LGUI SPACE  &lt 2 LANG1      &lt 4 LANG2      &kp RET  &kp BSPC  &none      &none    &none      &none
             >;
         };
 
