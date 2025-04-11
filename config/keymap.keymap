@@ -127,12 +127,12 @@
         compatible = "zmk,conditional-layers";
 
         tri_layer_mac {
-            if-layers = <3 4>;
+            if-layers = <2 4>;
             then-layer = <6>;
         };
 
         tri_layer_win {
-            if-layers = <4 5>;
+            if-layers = <5 3>;
             then-layer = <7>;
         };
     };
@@ -204,10 +204,10 @@
             label = "Raise Windows";
             display-name = "Raise Windows";
             bindings = <
-&none   &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT  &trans  &trans  &kp CARET  &kp AMPS  &kp STAR  &kp LPAR  &kp RPAR  &kp PIPE
-&trans  &trans    &trans  &trans    &trans    &trans     &trans  &trans  &trans     &trans    &trans    &trans    &trans    &trans
-&trans  &trans    &trans  &trans    &trans    &trans                     &trans     &trans    &trans    &trans    &trans    &trans
-&trans  &trans    &trans  &trans    &trans    &trans     &trans  &trans  &trans     &trans    &trans    &trans    &trans    &trans
+&none  &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT  &none  &none  &kp CARET  &kp AMPS  &kp STAR  &kp LPAR  &kp RPAR  &kp PIPE
+&none  &none     &none   &none     &none     &none      &none  &none  &none      &none     &none     &none     &none     &none
+&none  &none     &none   &none     &none     &none                    &none      &none     &none     &none     &none     &none
+&none  &none     &none   &none     &none     &none      &none  &none  &none      &none     &none     &none     &none     &none
             >;
         };
 
@@ -224,15 +224,14 @@
         };
 
         adjust-w {
+            label = "Adjust Windows";
             display-name = "Adjust Windows";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp F1    &kp F2    &kp F3     &kp F4     &kp F5  &kp F11  &kp F12  &kp F6     &kp F7     &kp F8    &kp F9    &kp F10  &trans
+&trans  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &trans  &trans   &trans   &kp RSHFT  &kp RCTRL  &kp LALT  &kp RGUI  &trans   &trans
+&trans  &trans    &trans    &trans     &trans     &trans                    &trans     &trans     &trans    &trans    &trans   &trans
+&trans  &trans    &trans    &trans     &trans     &trans  &trans   &trans   &trans     &trans     &trans    &trans    &trans   &trans
             >;
-
-            label = "Adjust Windows";
         };
 
         kp {
