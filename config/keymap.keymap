@@ -23,6 +23,8 @@
 
 &lt { tapping-term-ms = <180>; };
 
+&sl { release-after-ms = <2000>; };
+
 / {
     behaviors {
         hml: home_row_mod_left {
@@ -97,6 +99,19 @@
 
             tapping-term-ms = <180>;
         };
+
+        tog_off: tog_off {
+            compatible = "zmk,behavior-toggle-layer";
+            label = "TOG_OFF";
+            #binding-cells = <1>;
+            toggle-mode = "off";
+        };
+
+        tog_on: tog_on {
+            compatible = "zmk,behavior-toggle-layer";
+            label = "TOG_ON";
+            #binding-cells = <1>;
+        };
     };
 
     conditional_layers {
@@ -122,7 +137,7 @@
 &kp ESC    &kp Q         &kp W        &kp F        &kp P         &kp B           &kp LS(LC(TAB))  &kp PG_UP    &kp J    &kp L         &kp U        &kp Y        &kp SQT       &kp EQUAL
 &kp TAB    &hml LCTRL A  &hml LALT R  &hml LGUI S  &hml LSHFT T  &kp G           &kp LC(TAB)      &kp PG_DN    &kp M    &hmr RSHFT N  &hmr LGUI E  &hmr LALT I  &hmr RCTRL O  &kp MINUS
 &kp LSHFT  &kp Z         &kp X        &kp C        &kp D         &kp V                                         &kp K    &kp H         &kp COMMA    &kp DOT      &kp SLASH     &kp SEMI
-&mo 15     &kp LCTRL     &kp LALT     &none        &tasksw_mac   &mt LGUI SPACE  &lt 3 LANG2      &lt 4 LANG1  &kp RET  &kp BSPC      &kp DEL      &none        &none         &none
+&sl 15     &kp LCTRL     &kp LALT     &none        &tasksw_mac   &mt LGUI SPACE  &lt 3 LANG2      &lt 4 LANG1  &kp RET  &kp BSPC      &kp DEL      &none        &none         &none
             >;
 
             label = "Base Mac";
@@ -213,10 +228,10 @@
 
         novel {
             bindings = <
-&tog 8  &kp F1  &kp F2  &kp F3  &kp F4     &kp F5     &trans  &trans   &kp F6     &kp F7     &kp F8     &kp F9     &kp F10  &kp F11
-&trans  &trans  &trans  &trans  &trans     &trans     &trans  &trans   &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT  &trans   &kp F12
-&trans  &trans  &trans  &trans  &trans     &trans                      &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    &trans   &trans
-&trans  &trans  &trans  &trans  &kp LCTRL  &kp SPACE  &trans  &kp ESC  &kp ENTER  &kp BSPC   &trans     &trans     &trans   &trans
+&tog_off 8  &kp F1  &kp F2  &kp F3  &kp F4     &kp F5     &trans  &trans   &kp F6     &kp F7     &kp F8     &kp F9     &kp F10  &kp F11
+&trans      &trans  &trans  &trans  &trans     &trans     &trans  &trans   &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT  &trans   &kp F12
+&trans      &trans  &trans  &trans  &trans     &trans                      &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    &trans   &trans
+&trans      &trans  &trans  &trans  &kp LCTRL  &kp SPACE  &trans  &kp ESC  &kp ENTER  &kp BSPC   &trans     &trans     &trans   &trans
             >;
 
             label = "Novel Game";
@@ -225,10 +240,10 @@
         nav {
             display-name = "Navigation";
             bindings = <
-&tog 9  &none  &none           &mmv MOVE_UP    &none            &none  &none  &none  &none     &none      &none      &none      &none  &none
-&none   &none  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none  &none  &none  &mkp MB4  &mkp LCLK  &mkp MCLK  &mkp RCLK  &none  &none
-&none   &none  &none           &none           &none            &none                &mkp MB5  &none      &none      &none      &none  &none
-&none   &none  &none           &none           &none            &none  &none  &none  &none     &none      &none      &none      &none  &none
+&tog_off 9  &none  &none           &mmv MOVE_UP    &none            &none  &none  &none  &none     &none      &none      &none      &none  &none
+&none       &none  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none  &none  &none  &mkp MB4  &mkp LCLK  &mkp MCLK  &mkp RCLK  &none  &none
+&none       &none  &none           &none           &none            &none                &mkp MB5  &none      &none      &none      &none  &none
+&none       &none  &none           &none           &none            &none  &none  &none  &none     &none      &none      &none      &none  &none
             >;
 
             label = "Navigation";
@@ -283,10 +298,10 @@
         mode {
             display-name = "MODE";
             bindings = <
-&none   &none  &tog 1      &none  &none   &none  &none  &none  &none   &none   &none  &none  &none  &bootloader
-&none   &none  &sys_reset  &none  &tog 8  &none  &none  &none  &tog 8  &tog 9  &none  &none  &none  &none
-&none   &none  &none       &none  &none   &none                &none   &none   &none  &none  &none  &none
-&trans  &none  &none       &none  &none   &none  &none  &none  &none   &none   &none  &none  &none  &none
+&none   &none  &tog_on 1   &none  &none  &none      &none  &none  &none       &none      &none  &none  &none  &bootloader
+&none   &none  &sys_reset  &none  &none  &tog_on 8  &none  &none  &tog_off 1  &tog_on 9  &none  &none  &none  &none
+&none   &none  &none       &none  &none  &none                    &none       &none      &none  &none  &none  &none
+&trans  &none  &none       &none  &none  &none      &none  &none  &none       &none      &none  &none  &none  &none
             >;
         };
     };
