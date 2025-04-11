@@ -167,10 +167,10 @@
         lower-m {
             display-name = "Lower Mac";
             bindings = <
-&kp GRAVE  &kp N1     &kp N2     &kp N3     &kp N4      &kp N5  &trans  &trans  &kp N6    &kp N7     &kp N8     &kp N9     &kp N0  &kp BSLH
-&trans     &kp LCTRL  &kp LALT   &kp LCMD   &kp LSHIFT  &trans  &trans  &trans  &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &trans  &trans
-&trans     &undo_mac  &kp LG(X)  &kp LG(C)  &pst_mac    &trans                  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &trans  &trans
-&trans     &trans     &trans     &trans     &trans      &trans  &trans  &trans  &trans    &trans     &trans     &trans     &trans  &trans
+&trans  &kp N1     &kp N2     &kp N3     &kp N4      &kp N5        &trans  &trans  &kp N6    &kp N7     &kp N8     &kp N9     &kp N0  &kp BSLH
+&trans  &kp LCTRL  &kp LALT   &kp LCMD   &kp LSHIFT  &kp LG(LBKT)  &trans  &trans  &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &trans  &trans
+&trans  &undo_mac  &kp LG(X)  &kp LG(C)  &pst_mac    &kp LG(RBKT)                  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &trans  &trans
+&trans  &trans     &trans     &trans     &trans      &trans        &trans  &trans  &trans    &trans     &trans     &trans     &trans  &trans
             >;
 
             label = "Lower Mac";
@@ -179,10 +179,10 @@
         lower-w {
             display-name = "Lower Windows";
             bindings = <
-&kp GRAVE  &kp N1     &kp N2     &kp N3     &kp N4      &kp N5  &trans  &trans  &kp N6    &kp N7     &kp N8     &kp N9     &kp N0  &kp BSLH
-&trans     &kp LCTRL  &kp LALT   &kp LCMD   &kp LSHIFT  &trans  &trans  &trans  &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &trans  &trans
-&trans     &undo_win  &kp LC(X)  &kp LC(C)  &pst_win    &trans                  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &trans  &trans
-&trans     &trans     &trans     &trans     &trans      &trans  &trans  &trans  &trans    &trans     &trans     &trans     &trans  &trans
+&trans  &kp N1     &kp N2     &kp N3     &kp N4      &kp N5         &trans  &trans  &kp N6    &kp N7     &kp N8     &kp N9     &kp N0  &kp BSLH
+&trans  &kp LCTRL  &kp LALT   &kp LCMD   &kp LSHIFT  &kp LA(LEFT)   &trans  &trans  &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &trans  &trans
+&trans  &undo_win  &kp LC(X)  &kp LC(C)  &pst_win    &kp LA(RIGHT)                  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &trans  &trans
+&trans  &trans     &trans     &trans     &trans      &trans         &trans  &trans  &trans    &trans     &trans     &trans     &trans  &trans
             >;
 
             label = "Lower Windows";
@@ -191,10 +191,10 @@
         raise-m {
             display-name = "Raise Mac";
             bindings = <
-&kp TILDE  &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT  &trans  &trans  &kp CARET  &kp AMPS  &kp STAR  &kp LPAR  &kp RPAR  &kp PIPE
-&trans     &trans    &trans  &trans    &trans    &trans     &trans  &trans  &trans     &trans    &trans    &trans    &trans    &trans
-&trans     &trans    &trans  &trans    &trans    &trans                     &trans     &trans    &trans    &trans    &trans    &trans
-&trans     &trans    &trans  &trans    &trans    &trans     &trans  &trans  &trans     &trans    &trans    &trans    &trans    &trans
+&none  &kp EXCL   &kp AT    &kp HASH  &kp DLLR   &kp PRCNT  &none  &none  &kp CARET  &kp AMPS  &kp STAR  &kp LPAR  &kp RPAR  &kp PIPE
+&none  &kp LCTRL  &kp LALT  &kp LGUI  &kp LSHFT  &none      &none  &none  &kp LBKT   &kp LPAR  &kp RPAR  &kp RBKT  &none     &none
+&none  &none      &none     &none     &none      &none                    &none      &kp LBRC  &kp RBRC  &none     &none     &none
+&none  &none      &none     &none     &none      &none      &none  &none  &none      &none     &none     &none     &none     &none
             >;
 
             label = "Raise Mac";
@@ -204,20 +204,20 @@
             label = "Raise Windows";
             display-name = "Raise Windows";
             bindings = <
-&kp TILDE  &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT  &trans  &trans  &kp CARET  &kp AMPS  &kp STAR  &kp LPAR  &kp RPAR  &kp PIPE
-&trans     &trans    &trans  &trans    &trans    &trans     &trans  &trans  &trans     &trans    &trans    &trans    &trans    &trans
-&trans     &trans    &trans  &trans    &trans    &trans                     &trans     &trans    &trans    &trans    &trans    &trans
-&trans     &trans    &trans  &trans    &trans    &trans     &trans  &trans  &trans     &trans    &trans    &trans    &trans    &trans
+&none   &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT  &trans  &trans  &kp CARET  &kp AMPS  &kp STAR  &kp LPAR  &kp RPAR  &kp PIPE
+&trans  &trans    &trans  &trans    &trans    &trans     &trans  &trans  &trans     &trans    &trans    &trans    &trans    &trans
+&trans  &trans    &trans  &trans    &trans    &trans                     &trans     &trans    &trans    &trans    &trans    &trans
+&trans  &trans    &trans  &trans    &trans    &trans     &trans  &trans  &trans     &trans    &trans    &trans    &trans    &trans
             >;
         };
 
         adjust-m {
             display-name = "Adjust Mac";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp F1     &kp F2    &kp F3    &kp F4     &kp F5  &kp F11  &kp F12  &kp F6     &kp F7    &kp F8    &kp F9     &kp F10  &trans
+&trans  &kp LCTRL  &kp LALT  &kp LGUI  &kp LSHFT  &trans  &trans   &trans   &kp RSHFT  &kp LGUI  &kp LALT  &kp RCTRL  &trans   &trans
+&trans  &trans     &trans    &trans    &trans     &trans                    &trans     &trans    &trans    &trans     &trans   &trans
+&trans  &trans     &trans    &trans    &trans     &trans  &trans   &trans   &trans     &trans    &trans    &trans     &trans   &trans
             >;
 
             label = "Adjust Mac";
