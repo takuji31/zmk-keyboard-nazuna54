@@ -95,7 +95,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TASKSW_MAC";
             #binding-cells = <0>;
-            bindings = <&lt 12 LA(SPACE)>, <&kp LA(LS(SPACE))>;
+            bindings = <&lt 10 LA(SPACE)>, <&kp LA(LS(SPACE))>;
 
             tapping-term-ms = <180>;
         };
@@ -117,7 +117,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "ALT_NAV";
             #binding-cells = <0>;
-            bindings = <&kp LALT>, <&mo 9>;
+            bindings = <&kp LALT>, <&mo 13>;
 
             tapping-term-ms = <180>;
         };
@@ -146,7 +146,7 @@
 &kp GRAVE  &kp Q         &kp W        &kp F        &kp P         &kp B           &kp LS(LC(TAB))  &kp PG_UP    &kp J    &kp L         &kp U        &kp Y        &kp SQT       &kp EQUAL
 &kp TAB    &hml LCTRL A  &hml LALT R  &hml LGUI S  &hml LSHFT T  &kp G           &kp LC(TAB)      &kp PG_DN    &kp M    &hmr RSHFT N  &hmr LGUI E  &hmr LALT I  &hmr RCTRL O  &kp MINUS
 &kp LSHFT  &kp Z         &kp X        &kp C        &kp D         &kp V                                         &kp K    &kp H         &kp COMMA    &kp DOT      &kp SLASH     &kp SEMI
-&sl 15     &kp LCTRL     &kp LALT     &kp DEL      &tasksw_mac   &mt LGUI SPACE  &lt 3 LANG2      &lt 4 LANG1  &kp RET  &kp BSPC      &kp ESC      &none        &none         &none
+&sl 15     &kp LCTRL     &kp LALT     &lt 8 DEL    &tasksw_mac   &mt LGUI SPACE  &lt 3 LANG2      &lt 4 LANG1  &kp RET  &kp BSPC      &kp ESC      &none        &none         &none
             >;
 
             label = "Base Mac";
@@ -158,7 +158,7 @@
 &kp GRAVE  &kp Q        &kp W        &kp F         &kp P         &kp B            &kp LS(LC(TAB))  &kp PG_UP    &kp J    &kp L         &kp U         &kp Y        &kp SQT      &kp EQUAL
 &kp TAB    &hml LGUI A  &hml LALT R  &hml LCTRL S  &hml LSHFT T  &kp G            &kp LC(TAB)      &kp PG_DN    &kp M    &hmr RSHFT N  &hmr RCTRL E  &hmr LALT I  &hmr RGUI O  &kp MINUS
 &kp LSHFT  &kp Z        &kp X        &kp C         &kp D         &kp V                                          &kp K    &kp H         &kp COMMA     &kp DOT      &kp SLASH    &kp SEMI
-&sl 15     &none        &kp LGUI     &kp DEL       &alt_nav      &mt LCTRL SPACE  &lt 4 LANG2      &lt 5 LANG1  &kp RET  &kp BSPC      &kp ESC       &none        &none        &none
+&sl 15     &none        &kp LGUI     &lt 8 DEL     &alt_nav      &mt LCTRL SPACE  &lt 4 LANG2      &lt 5 LANG1  &kp RET  &kp BSPC      &kp ESC       &none        &none        &none
             >;
 
             label = "Base Windows";
@@ -235,35 +235,12 @@
             label = "Adjust Windows";
         };
 
-        novel {
+        kp {
             bindings = <
-&tog_off 8  &kp F1  &kp F2  &kp F3  &kp F4     &kp F5     &trans  &trans   &kp F6     &kp F7     &kp F8     &kp F9     &kp F10  &kp F11
-&trans      &trans  &trans  &trans  &trans     &trans     &trans  &trans   &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT  &trans   &kp F12
-&trans      &trans  &trans  &trans  &trans     &trans                      &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    &trans   &trans
-&trans      &trans  &trans  &trans  &kp LCTRL  &kp SPACE  &trans  &kp ESC  &kp ENTER  &kp BSPC   &trans     &trans     &trans   &trans
-            >;
-
-            label = "Novel Game";
-        };
-
-        nav {
-            display-name = "Navigation";
-            bindings = <
-&tog_off 9  &none  &none           &mmv MOVE_UP    &none            &none  &none  &none  &none     &none      &none      &none      &none  &none
-&none       &none  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none  &none  &none  &mkp MB4  &mkp LCLK  &mkp MCLK  &mkp RCLK  &none  &none
-&none       &none  &none           &none           &none            &none                &mkp MB5  &none      &none      &none      &none  &none
-&none       &none  &none           &none           &none            &none  &none  &none  &none     &none      &none      &none      &none  &none
-            >;
-
-            label = "Navigation";
-        };
-
-        layer_12 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&none  &none  &none  &none  &none  &none  &none  &none  &none  &kp N7  &kp N8  &kp N9   &kp SLASH  &none
+&none  &none  &none  &none  &none  &none  &none  &none  &none  &kp N4  &kp N5  &kp N6   &kp STAR   &none
+&none  &none  &none  &none  &none  &none                &none  &kp N1  &kp N2  &kp N3   &kp MINUS  &none
+&none  &none  &none  &none  &none  &none  &none  &none  &none  &none   &kp N0  &kp DOT  &kp PLUS   &none
             >;
         };
 
@@ -294,6 +271,29 @@
             >;
         };
 
+        novel {
+            bindings = <
+&tog_off 12  &kp F1  &kp F2  &kp F3  &kp F4     &kp F5     &trans  &trans   &kp F6     &kp F7     &kp F8     &kp F9     &kp F10  &kp F11
+&trans       &trans  &trans  &trans  &trans     &trans     &trans  &trans   &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT  &trans   &kp F12
+&trans       &trans  &trans  &trans  &trans     &trans                      &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    &trans   &trans
+&trans       &trans  &trans  &trans  &kp LCTRL  &kp SPACE  &trans  &kp ESC  &kp ENTER  &kp BSPC   &trans     &trans     &trans   &trans
+            >;
+
+            label = "Novel Game";
+        };
+
+        nav {
+            display-name = "Navigation";
+            bindings = <
+&tog_off 13  &none  &none           &mmv MOVE_UP    &none            &none  &none  &none  &none     &none      &none      &none      &none  &none
+&none        &none  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none  &none  &none  &mkp MB4  &mkp LCLK  &mkp MCLK  &mkp RCLK  &none  &none
+&none        &none  &none           &none           &none            &none                &mkp MB5  &none      &none      &none      &none  &none
+&none        &none  &none           &none           &none            &none  &none  &none  &none     &none      &none      &none      &none  &none
+            >;
+
+            label = "Navigation";
+        };
+
         device {
             display-name = "Device";
             bindings = <
@@ -307,10 +307,10 @@
         mode {
             display-name = "MODE";
             bindings = <
-&none   &none  &tog_on 1   &none  &none  &none      &none  &none  &none       &none      &none  &none  &none  &bootloader
-&none   &none  &sys_reset  &none  &none  &tog_on 8  &none  &none  &tog_off 1  &tog_on 9  &none  &none  &none  &none
-&none   &none  &none       &none  &none  &none                    &none       &none      &none  &none  &none  &none
-&trans  &none  &none       &none  &none  &none      &none  &none  &none       &none      &none  &none  &none  &none
+&none   &none  &tog_on 1   &none  &none  &none       &none  &none  &none       &none       &none  &none  &none  &bootloader
+&none   &none  &sys_reset  &none  &none  &tog_on 12  &none  &none  &tog_off 1  &tog_on 13  &none  &none  &none  &none
+&none   &none  &none       &none  &none  &none                     &none       &none       &none  &none  &none  &none
+&trans  &none  &none       &none  &none  &none       &none  &none  &none       &none       &none  &none  &none  &none
             >;
         };
     };
