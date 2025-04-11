@@ -112,6 +112,15 @@
             label = "TOG_ON";
             #binding-cells = <1>;
         };
+
+        alt_nav: alt_nav {
+            compatible = "zmk,behavior-tap-dance";
+            label = "ALT_NAV";
+            #binding-cells = <0>;
+            bindings = <&kp LALT>, <&mo 9>;
+
+            tapping-term-ms = <180>;
+        };
     };
 
     conditional_layers {
@@ -149,7 +158,7 @@
 &kp GRAVE  &kp Q        &kp W        &kp F         &kp P         &kp B            &kp LS(LC(TAB))  &kp PG_UP    &kp J    &kp L         &kp U         &kp Y        &kp SQT      &kp EQUAL
 &kp TAB    &hml LGUI A  &hml LALT R  &hml LCTRL S  &hml LSHFT T  &kp G            &kp LC(TAB)      &kp PG_DN    &kp M    &hmr RSHFT N  &hmr RCTRL E  &hmr LALT I  &hmr RGUI O  &kp MINUS
 &kp LSHFT  &kp Z        &kp X        &kp C         &kp D         &kp V                                          &kp K    &kp H         &kp COMMA     &kp DOT      &kp SLASH    &kp SEMI
-&sl 15     &none        &kp LGUI     &kp DEL       &kp LALT      &mt LCTRL SPACE  &lt 4 LANG2      &lt 5 LANG1  &kp RET  &kp BSPC      &kp ESC       &none        &none        &none
+&sl 15     &none        &kp LGUI     &kp DEL       &alt_nav      &mt LCTRL SPACE  &lt 4 LANG2      &lt 5 LANG1  &kp RET  &kp BSPC      &kp ESC       &none        &none        &none
             >;
 
             label = "Base Windows";
