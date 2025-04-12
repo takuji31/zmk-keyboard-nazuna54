@@ -145,10 +145,10 @@
         base-m {
             display-name = "Base Mac";
             bindings = <
-&kp GRAVE  &kp Q         &kp W        &kp F        &kp P         &kp B           &kp LS(LC(TAB))  &kp PG_UP    &kp J    &kp L         &kp U        &kp Y        &kp SQT       &kp EQUAL
-&kp TAB    &hml LCTRL A  &hml LALT R  &hml LGUI S  &hml LSHFT T  &kp G           &kp LC(TAB)      &kp PG_DN    &kp M    &hmr RSHFT N  &hmr LGUI E  &hmr LALT I  &hmr RCTRL O  &kp MINUS
-&kp LSHFT  &kp Z         &kp X        &kp C        &kp D         &kp V                                         &kp K    &kp H         &kp COMMA    &kp DOT      &kp SLASH     &kp SEMI
-&sl 15     &tog 13       &kp LCTRL    &lt 8 DEL    &tasksw_mac   &mt LGUI SPACE  &lt 2 LANG2      &lt 4 LANG1  &kp RET  &kp BSPC      &lt 14 ESC   &none        &none         &none
+&kp GRAVE  &kp Q         &kp W        &kp F        &kp P           &kp B        &kp LS(LC(TAB))  &kp PG_UP   &kp J        &kp L         &kp U        &kp Y        &kp SQT       &kp EQUAL
+&kp TAB    &hml LCTRL A  &hml LALT R  &hml LGUI S  &hml LSHFT T    &kp G        &kp LC(TAB)      &kp PG_DN   &kp M        &hmr RSHFT N  &hmr LGUI E  &hmr LALT I  &hmr RCTRL O  &kp MINUS
+&kp LSHFT  &kp Z         &kp X        &kp C        &kp D           &kp V                                     &kp K        &kp H         &kp COMMA    &kp DOT      &kp SLASH     &kp SEMI
+&sl 15     &tog 13       &kp LCTRL    &lt 8 DEL    &mt LGUI SPACE  &lt 2 LANG2  &tasksw_mac      &lt 14 ESC  &lt 4 LANG1  &kp RET       &kp BSPC     &none        &none         &none
             >;
 
             label = "Base Mac";
