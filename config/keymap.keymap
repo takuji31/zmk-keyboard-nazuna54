@@ -145,10 +145,10 @@
         base-m {
             display-name = "Base Mac";
             bindings = <
-&kp GRAVE  &kp Q         &kp W        &kp F        &kp P         &kp B           &kp LS(LC(TAB))  &kp PG_UP    &kp J    &kp L         &kp U        &kp Y        &kp SQT       &kp EQUAL
-&kp TAB    &hml LCTRL A  &hml LALT R  &hml LGUI S  &hml LSHFT T  &kp G           &kp LC(TAB)      &kp PG_DN    &kp M    &hmr RSHFT N  &hmr LGUI E  &hmr LALT I  &hmr RCTRL O  &kp MINUS
-&kp LSHFT  &kp Z         &kp X        &kp C        &kp D         &kp V                                         &kp K    &kp H         &kp COMMA    &kp DOT      &kp SLASH     &kp SEMI
-&sl 15     &none         &kp LCTRL    &alt_nav     &lt 8 DEL     &mt LGUI SPACE  &lt 2 LANG2      &lt 4 LANG1  &kp RET  &kp BSPC      &lt 14 ESC   &none        &none         &none
+&kp GRAVE  &kp Q         &kp W        &kp F        &kp P         &kp B           &kp LS(LC(TAB))  &kp LG(LBKT)  &kp J    &kp L         &kp U        &kp Y        &kp SQT       &kp EQUAL
+&kp TAB    &hml LCTRL A  &hml LALT R  &hml LGUI S  &hml LSHFT T  &kp G           &kp LC(TAB)      &kp LG(RBKT)  &kp M    &hmr RSHFT N  &hmr LGUI E  &hmr LALT I  &hmr RCTRL O  &kp MINUS
+&kp LSHFT  &kp Z         &kp X        &kp C        &kp D         &kp V                                          &kp K    &kp H         &kp COMMA    &kp DOT      &kp SLASH     &kp SEMI
+&sl 15     &none         &kp LCTRL    &alt_nav     &lt 8 DEL     &mt LGUI SPACE  &lt 2 LANG2      &lt 4 LANG1   &kp RET  &kp BSPC      &lt 14 ESC   &none        &none         &none
             >;
 
             label = "Base Mac";
@@ -157,10 +157,10 @@
         base-w {
             display-name = "Base Windows";
             bindings = <
-&kp GRAVE  &kp Q        &kp W        &kp F         &kp P         &kp B            &kp LS(LC(TAB))  &kp PG_UP    &kp J    &kp L         &kp U         &kp Y        &kp SQT      &kp EQUAL
-&kp TAB    &hml LGUI A  &hml LALT R  &hml LCTRL S  &hml LSHFT T  &kp G            &kp LC(TAB)      &kp PG_DN    &kp M    &hmr RSHFT N  &hmr RCTRL E  &hmr LALT I  &hmr RGUI O  &kp MINUS
-&kp LSHFT  &kp Z        &kp X        &kp C         &kp D         &kp V                                          &kp K    &kp H         &kp COMMA     &kp DOT      &kp SLASH    &kp SEMI
-&sl 15     &none        &kp LGUI     &alt_nav      &lt 8 DEL     &mt LCTRL SPACE  &lt 3 LANG2      &lt 5 LANG1  &kp RET  &kp BSPC      &lt 14 ESC    &none        &none        &none
+&kp GRAVE  &kp Q        &kp W        &kp F         &kp P         &kp B            &kp LS(LC(TAB))  &kp LA(LEFT)   &kp J    &kp L         &kp U         &kp Y        &kp SQT      &kp EQUAL
+&kp TAB    &hml LGUI A  &hml LALT R  &hml LCTRL S  &hml LSHFT T  &kp G            &kp LC(TAB)      &kp LA(RIGHT)  &kp M    &hmr RSHFT N  &hmr RCTRL E  &hmr LALT I  &hmr RGUI O  &kp MINUS
+&kp LSHFT  &kp Z        &kp X        &kp C         &kp D         &kp V                                            &kp K    &kp H         &kp COMMA     &kp DOT      &kp SLASH    &kp SEMI
+&sl 15     &none        &kp LGUI     &alt_nav      &lt 8 DEL     &mt LCTRL SPACE  &lt 3 LANG2      &lt 5 LANG1    &kp RET  &kp BSPC      &lt 14 ESC    &none        &none        &none
             >;
 
             label = "Base Windows";
@@ -169,10 +169,10 @@
         lower-m {
             display-name = "Lower Mac";
             bindings = <
-&trans  &kp N1     &kp N2     &kp N3     &kp N4      &kp N5        &trans  &trans  &kp N6    &kp N7     &kp N8     &kp N9     &kp N0  &kp BSLH
-&trans  &kp LCTRL  &kp LALT   &kp LCMD   &kp LSHIFT  &kp LG(LBKT)  &trans  &trans  &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &trans  &trans
-&trans  &undo_mac  &kp LG(X)  &kp LG(C)  &pst_mac    &kp LG(RBKT)                  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &trans  &trans
-&trans  &trans     &trans     &trans     &trans      &trans        &trans  &trans  &trans    &trans     &trans     &trans     &trans  &trans
+&trans  &kp N1     &kp N2     &kp N3     &kp N4      &kp N5         &trans  &trans  &kp N6    &kp N7     &kp N8     &kp N9     &kp N0  &kp BSLH
+&trans  &kp LCTRL  &kp LALT   &kp LCMD   &kp LSHIFT  &none          &trans  &trans  &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &trans  &trans
+&trans  &undo_mac  &kp LG(X)  &kp LG(C)  &kp LG(V)   &kp LG(LS(V))                  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &trans  &trans
+&trans  &trans     &trans     &trans     &trans      &trans         &trans  &trans  &trans    &trans     &trans     &trans     &trans  &trans
             >;
 
             label = "Lower Mac";
@@ -182,8 +182,8 @@
             display-name = "Lower Windows";
             bindings = <
 &trans  &kp N1     &kp N2     &kp N3     &kp N4      &kp N5         &trans  &trans  &kp N6    &kp N7     &kp N8     &kp N9     &kp N0  &kp BSLH
-&trans  &kp LCTRL  &kp LALT   &kp LCMD   &kp LSHIFT  &kp LA(LEFT)   &trans  &trans  &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &trans  &trans
-&trans  &undo_win  &kp LC(X)  &kp LC(C)  &pst_win    &kp LA(RIGHT)                  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &trans  &trans
+&trans  &kp LCTRL  &kp LALT   &kp LCMD   &kp LSHIFT  &none          &trans  &trans  &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &trans  &trans
+&trans  &undo_win  &kp LC(X)  &kp LC(C)  &kp LC(V)   &kp LC(LS(V))                  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &trans  &trans
 &trans  &trans     &trans     &trans     &trans      &trans         &trans  &trans  &trans    &trans     &trans     &trans     &trans  &trans
             >;
 
