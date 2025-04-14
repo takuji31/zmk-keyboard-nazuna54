@@ -157,10 +157,10 @@
         base-w {
             display-name = "Base Windows";
             bindings = <
-&kp GRAVE  &kp Q        &kp W        &kp F         &kp P         &kp B            &kp LS(LC(TAB))  &kp PG_UP    &kp J    &kp L         &kp U         &kp Y        &kp SQT      &kp EQUAL
-&kp TAB    &hml LGUI A  &hml LALT R  &hml LCTRL S  &hml LSHFT T  &kp G            &kp LC(TAB)      &kp PG_DN    &kp M    &hmr RSHFT N  &hmr RCTRL E  &hmr LALT I  &hmr RGUI O  &kp MINUS
-&kp LSHFT  &kp Z        &kp X        &kp C         &kp D         &kp V                                          &kp K    &kp H         &kp COMMA     &kp DOT      &kp SLASH    &kp SEMI
-&sl 15     &tog 13      &kp LGUI     &lt 8 DEL     &alt_nav      &mt LCTRL SPACE  &lt 3 LANG2      &lt 5 LANG1  &kp RET  &kp BSPC      &lt 14 ESC    &none        &none        &none
+&kp GRAVE  &kp Q        &kp W        &kp F         &kp P            &kp B        &kp LS(LC(TAB))  &kp PG_UP   &kp J        &kp L         &kp U         &kp Y        &kp SQT      &kp EQUAL
+&kp TAB    &hml LGUI A  &hml LALT R  &hml LCTRL S  &hml LSHFT T     &kp G        &kp LC(TAB)      &kp PG_DN   &kp M        &hmr RSHFT N  &hmr RCTRL E  &hmr LALT I  &hmr RGUI O  &kp MINUS
+&kp LSHFT  &kp Z        &kp X        &kp C         &kp D            &kp V                                     &kp K        &kp H         &kp COMMA     &kp DOT      &kp SLASH    &kp SEMI
+&sl 15     &tog 13      &kp LGUI     &alt_nav      &mt LCTRL SPACE  &lt 3 LANG2  &lt 8 DEL        &lt 14 ESC  &lt 5 LANG1  &kp RET       &kp BSPC      &none        &none        &none
             >;
 
             label = "Base Windows";
