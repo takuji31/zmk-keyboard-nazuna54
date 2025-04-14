@@ -97,7 +97,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TASKSW_MAC";
             #binding-cells = <0>;
-            bindings = <&lt 10 LA(SPACE)>, <&kp LA(LS(SPACE))>;
+            bindings = <&lt 8 LG(SPACE)>, <&lt 13 LA(SPACE)>, <&none>;
 
             tapping-term-ms = <180>;
         };
@@ -148,7 +148,7 @@
 &kp GRAVE  &kp Q         &kp W        &kp F        &kp P         &kp B           &kp LS(LC(TAB))  &kp LG(LBKT)  &kp J    &kp L         &kp U        &kp Y        &kp SQT       &kp EQUAL
 &kp TAB    &hml LCTRL A  &hml LALT R  &hml LGUI S  &hml LSHFT T  &kp G           &kp LC(TAB)      &kp LG(RBKT)  &kp M    &hmr RSHFT N  &hmr LGUI E  &hmr LALT I  &hmr RCTRL O  &kp MINUS
 &kp LSHFT  &kp Z         &kp X        &kp C        &kp D         &kp V                                          &kp K    &kp H         &kp COMMA    &kp DOT      &kp SLASH     &kp SEMI
-&sl 15     &none         &kp LCTRL    &kp_nav      &lt 8 DEL     &mt LGUI SPACE  &lt 2 LANG2      &lt 4 LANG1   &kp RET  &kp BSPC      &lt 14 ESC   &none        &none         &none
+&sl 15     &none         &kp LCTRL    &tasksw_mac  &mt LALT DEL  &mt LGUI SPACE  &lt 2 LANG2      &lt 4 LANG1   &kp RET  &kp BSPC      &lt 14 ESC   &none        &none         &none
             >;
 
             label = "Base Mac";
