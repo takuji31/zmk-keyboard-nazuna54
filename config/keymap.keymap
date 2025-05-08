@@ -145,9 +145,9 @@
         base-m {
             display-name = "Base Mac";
             bindings = <
-&kp GRAVE  &kp Q         &kp W        &kp F        &kp P         &kp B           &kp LS(LC(TAB))  &kp LG(LBKT)  &kp J    &kp L         &kp U        &kp Y        &kp SQT       &kp EQUAL
-&kp TAB    &hml LCTRL A  &hml LALT R  &hml LGUI S  &hml LSHFT T  &kp G           &kp LC(TAB)      &kp LG(RBKT)  &kp M    &hmr RSHFT N  &hmr LGUI E  &hmr LALT I  &hmr RCTRL O  &kp MINUS
-&kp LSHFT  &kp Z         &kp X        &kp C        &kp D         &kp V                                          &kp K    &kp H         &kp COMMA    &kp DOT      &kp SLASH     &kp SEMI
+&kp GRAVE  &kp Q         &kp W        &kp F        &kp P         &kp G           &kp LS(LC(TAB))  &kp LG(LBKT)  &kp J    &kp L         &kp U        &kp Y        &kp SQT       &kp EQUAL
+&kp TAB    &hml LCTRL A  &hml LALT R  &hml LGUI S  &hml LSHFT T  &kp D           &kp LC(TAB)      &kp LG(RBKT)  &kp H    &hmr RSHFT N  &hmr LGUI E  &hmr LALT I  &hmr RCTRL O  &kp MINUS
+&kp LSHFT  &kp Z         &kp X        &kp C        &kp V         &kp B                                          &kp K    &kp M         &kp COMMA    &kp DOT      &kp SLASH     &kp SEMI
 &mo 15     &none         &kp LCTRL    &tasksw_mac  &mt LALT DEL  &mt LGUI SPACE  &lt 2 LANG2      &lt 4 LANG1   &kp RET  &kp BSPC      &lt 14 ESC   &none        &none         &none
             >;
 
@@ -157,9 +157,9 @@
         base-w {
             display-name = "Base Windows";
             bindings = <
-&kp GRAVE  &kp Q        &kp W        &kp F         &kp P         &kp B            &kp LS(LC(TAB))  &kp LA(LEFT)   &kp J    &kp L         &kp U         &kp Y        &kp SQT      &kp EQUAL
-&kp TAB    &hml LGUI A  &hml LALT R  &hml LCTRL S  &hml LSHFT T  &kp G            &kp LC(TAB)      &kp LA(RIGHT)  &kp M    &hmr RSHFT N  &hmr RCTRL E  &hmr LALT I  &hmr RGUI O  &kp MINUS
-&kp LSHFT  &kp Z        &kp X        &kp C         &kp D         &kp V                                            &kp K    &kp H         &kp COMMA     &kp DOT      &kp SLASH    &kp SEMI
+&kp GRAVE  &kp Q        &kp W        &kp F         &kp P         &kp G            &kp LS(LC(TAB))  &kp LA(LEFT)   &kp J    &kp L         &kp U         &kp Y        &kp SQT      &kp EQUAL
+&kp TAB    &hml LGUI A  &hml LALT R  &hml LCTRL S  &hml LSHFT T  &kp D            &kp LC(TAB)      &kp LA(RIGHT)  &kp H    &hmr RSHFT N  &hmr RCTRL E  &hmr LALT I  &hmr RGUI O  &kp MINUS
+&kp LSHFT  &kp Z        &kp X        &kp C         &kp V         &kp B                                            &kp K    &kp M         &kp COMMA     &kp DOT      &kp SLASH    &kp SEMI
 &mo 15     &none        &kp LGUI     &kp_nav       &mt LALT DEL  &mt LCTRL SPACE  &lt 3 LANG2      &lt 5 LANG1    &kp RET  &kp BSPC      &lt 14 ESC    &none        &none        &none
             >;
 
