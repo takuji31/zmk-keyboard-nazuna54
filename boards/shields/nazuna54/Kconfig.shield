@@ -2,3 +2,5 @@ config SHIELD_NAZUNA54_LEFT
     def_bool $(shields_list_contains,nazuna54_left)
 config SHIELD_NAZUNA54_RIGHT
     def_bool $(shields_list_contains,nazuna54_right)
+config SHIELD_NAZUNA54_DONGLE
+    def_bool $(shields_list_contains,nazuna54_dongle)
