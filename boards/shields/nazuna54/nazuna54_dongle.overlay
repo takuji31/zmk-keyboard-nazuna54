@@ -1,13 +1,11 @@
-
 #include <dt-bindings/zmk/matrix_transform.h>
 #include "layouts.dtsi"
 
 / {
     chosen {
-        zmk,kscan = &kscan0;
-        zmk,matrix_transform = &default_transform;
+        zmk,kscan = &mock_kscan;
+        zmk,physical-layout = &physical_layout0;
     };
-
     default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
         columns = <14>;
@@ -20,12 +18,14 @@
         >;
     };
 
-    kscan0: kscan {
+    mock_kscan: mock_kscan_0 {
         compatible = "zmk,kscan-mock";
+        columns = <0>;
+        rows = <0>;
+        events = <0>;
     };
 };
 
-&physical_layout0 {
-    kscan = <&kscan0>;
+&physical_layout0 { 
     transform = <&default_transform>;
 };
