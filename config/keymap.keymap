@@ -193,10 +193,10 @@
         raise-m {
             display-name = "Raise Mac";
             bindings = <
-&kp TILDE  &kp EXCL   &kp AT    &kp HASH  &kp DLLR   &kp PRCNT  &none  &none  &kp CARET  &kp AMPS  &kp STAR  &kp LPAR  &kp RPAR  &kp PIPE
-&none      &kp LCTRL  &kp LALT  &kp LGUI  &kp LSHFT  &none      &none  &none  &kp LBKT   &kp LPAR  &kp RPAR  &kp RBKT  &none     &kp LG(L)
-&none      &none      &none     &none     &none      &none                    &none      &kp LBRC  &kp RBRC  &none     &none     &none
-&none      &none      &none     &none     &none      &none      &none  &none  &none      &none     &none     &none     &none     &none
+&kp TILDE  &kp EXCL  &kp AT   &kp HASH  &kp DLLR  &kp PRCNT  &none  &none  &kp CARET  &kp AMPS  &kp STAR  &kp LPAR   &kp RPAR  &kp PIPE
+&none      &kp F1    &kp F2   &kp F3    &kp F4    &kp F5     &none  &none  &kp RSHFT  &kp LGUI  &kp LALT  &kp RCTRL  &none     &kp LG(LC(Q))
+&none      &kp F6    &kp F7   &kp F8    &kp F9    &kp F10                  &none      &none     &none     &none      &none     &none
+&none      &kp F11   &kp F12  &none     &none     &none      &none  &none  &none      &none     &none     &none      &none     &none
             >;
 
             label = "Raise Mac";
@@ -206,10 +206,10 @@
             label = "Raise Windows";
             display-name = "Raise Windows";
             bindings = <
-&kp TILDE  &kp EXCL  &kp AT    &kp HASH   &kp DLLR   &kp PRCNT  &none  &none  &kp CARET  &kp AMPS  &kp STAR  &kp LPAR  &kp RPAR  &kp PIPE
-&none      &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none      &none  &none  &kp LBKT   &kp LPAR  &kp RPAR  &kp RBKT  &none     &none
-&none      &none     &none     &none      &none      &none                    &none      &kp LBRC  &kp RBRC  &none     &none     &none
-&none      &none     &none     &none      &none      &none      &none  &none  &none      &none     &none     &none     &none     &none
+&kp TILDE  &kp EXCL  &kp AT   &kp HASH  &kp DLLR  &kp PRCNT  &none  &none  &kp CARET  &kp AMPS   &kp STAR  &kp LPAR  &kp RPAR  &kp PIPE
+&none      &kp F1    &kp F2   &kp F3    &kp F4    &kp F5     &none  &none  &kp RSHFT  &kp RCTRL  &kp LALT  &kp RGUI  &none     &kp LG(L)
+&none      &kp F6    &kp F7   &kp F8    &kp F9    &kp F10                  &none      &none      &none     &none     &none     &none
+&none      &kp F11   &kp F12  &none     &none     &none      &none  &none  &none      &none      &none     &none     &none     &none
             >;
         };
 
