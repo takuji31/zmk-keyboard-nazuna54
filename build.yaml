@@ -10,4 +10,6 @@ include:
   - board: akdk_bt1
     shield: settings_reset
   - board: seeeduino_xiao_ble
+    shield: settings_reset
+  - board: seeeduino_xiao_ble
     shield: nazuna54_dongle dongle_screen
